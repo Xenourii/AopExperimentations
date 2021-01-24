@@ -145,7 +145,7 @@ namespace AopExperimentation
                 case null:
                     return "null";
                 case EventHandler evt:
-                    return $"EventHandler(methodName={evt.Method.Name})";
+                    return $"EventHandler with methodName: {evt.Method.Name}";
             }
 
             if (_useJsonSerializer)
@@ -156,6 +156,6 @@ namespace AopExperimentation
 
         private static string ConvertToJsonWithIgnoredLooping(object obj) =>
             JsonConvert.SerializeObject(obj, Formatting.None,
-                new JsonSerializerSettings {ReferenceLoopHandling = ReferenceLoopHandling.Ignore, MaxDepth = 1});
+                new JsonSerializerSettings {ReferenceLoopHandling = ReferenceLoopHandling.Ignore});
     }
 }

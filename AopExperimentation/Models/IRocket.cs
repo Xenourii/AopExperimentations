@@ -5,7 +5,7 @@ namespace AopExperimentation.Models
 {
     public interface IRocket
     {
-        int CalculateSum(int a, int b);
+        int CalculateSum(int numberA, int numberB);
         void DoSomething(string str);
         void ThrowException();
         void DoNotProfile();
